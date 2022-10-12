@@ -1,0 +1,67 @@
+.wrapper {
+	padding: 20px;
+
+	.banner {
+		width: 100%;
+		margin-bottom: 100px;
+	}
+
+	.pokeshop {
+		margin-bottom: 100px;
+	}
+
+	.products {
+		margin-bottom: 100px;
+	}
+
+	.story {
+		margin-bottom: 100px;
+	}
+
+	.contentContainer {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 50px;
+	}
+
+	.title {
+		margin-bottom: 30px;
+		font-size: 36px;
+		font-weight: 500;
+		&__center {
+			margin-bottom: 30px;
+			font-size: 36px;
+			font-weight: 500;
+			text-align: center;
+		}
+	}
+
+	.content {
+		width: 70%;
+		p {
+			margin-bottom: 20px;
+			line-height: 20px;
+		}
+
+		&__story {
+			margin-bottom: 40px;
+			p {
+				margin-bottom: 20px;
+				line-height: 20px;
+			}
+		}
+	}
+
+	.image {
+		width: 30%;
+	}
+
+	.images {
+		display: flex;
+		gap: 50px;
+		img {
+			width: 100%;
+		}
+	}
+}

@@ -1,0 +1,58 @@
+.wrapper {
+	.footer {
+		display: flex;
+		justify-content: space-between;
+		padding: 15px 0;
+		gap: 100px;
+		.logoContainer {
+			.logotip {
+				margin-bottom: 10px;
+				.logoLink {
+					padding: 10px 0;
+					display: flex;
+					align-items: center;
+					img {
+						width: 30px;
+					}
+					p {
+						margin-left: 5px;
+						color: #000;
+						font-size: 16px;
+						font-weight: 500;
+					}
+				}
+			}
+			.email {
+				max-width: 250px;
+				font-size: 14px;
+				line-height: 20px;
+			}
+		}
+		.infoContainer {
+			display: flex;
+			gap: 200px;
+			.info {
+				.title {
+					font-size: 14px;
+					font-weight: 500;
+					line-height: 40px;
+				}
+				.linkContainer {
+					display: flex;
+					flex-direction: column;
+					.link {
+						color: #000;
+						font-size: 14px;
+						line-height: 20px;
+					}
+				}
+			}
+		}
+	}
+	.pokemonshop {
+		padding: 5px;
+		font-size: 12px;
+		text-align: center;
+		border-top: 1px solid #000;
+	}
+}

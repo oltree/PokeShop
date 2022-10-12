@@ -1,0 +1,38 @@
+.wrapper {
+	display: flex;
+	gap: 50px;
+	margin-bottom: 40px;
+
+	.article {
+		width: 18%;
+		padding: 20px;
+		.categories {
+			font-size: 24px;
+			font-weight: 500;
+			margin-bottom: 20px;
+		}
+	}
+
+	.shopContainer {
+		width: 80%;
+		min-height: 67vh;
+		display: flex;
+		flex-direction: column;
+		overflow: hidden;
+
+		.shop {
+			display: flex;
+			flex: 1 1 auto;
+			justify-content: center;
+			flex-wrap: wrap;
+			gap: 20px;
+			padding: 20px 0;
+			margin-bottom: 20px;
+		}
+
+		.pagination {
+			display: flex;
+			justify-content: center;
+		}
+	}
+}
