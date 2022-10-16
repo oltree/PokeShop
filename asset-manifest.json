@@ -1,16 +1,26 @@
 {
   "files": {
-    "main.css": "/PokeShop/static/css/main.e8b52a5d.css",
-    "main.js": "/PokeShop/static/js/main.4030de6d.js",
-    "static/js/787.92e57524.chunk.js": "/PokeShop/static/js/787.92e57524.chunk.js",
-    "static/media/logo.svg": "/PokeShop/static/media/logo.b2e5a01e505f739f1484b881277d5186.svg",
+    "main.css": "/PokeShop/static/css/main.b73a2f55.css",
+    "main.js": "/PokeShop/static/js/main.5c50c6a6.js",
+    "static/media/MainBackground.png": "/PokeShop/static/media/MainBackground.b4124470c913caa13689.png",
+    "static/media/ContactImage.png": "/PokeShop/static/media/ContactImage.06edd168f8bcecf59299.png",
+    "static/media/AboutUsBg1.jpg": "/PokeShop/static/media/AboutUsBg1.e6ed804560bfc136448b.jpg",
+    "static/media/AboutUsImage1.jpg": "/PokeShop/static/media/AboutUsImage1.81f7fd83f16e20790375.jpg",
+    "static/media/AboutUsImage2.jpg": "/PokeShop/static/media/AboutUsImage2.fd95c27279bbfef0d208.jpg",
+    "static/media/SPECIAL_DEFENCE.png": "/PokeShop/static/media/SPECIAL_DEFENCE.f2e911485530ddb25da8.png",
+    "static/media/SPEED.png": "/PokeShop/static/media/SPEED.d3889f9602e4edb1d7a8.png",
+    "static/media/DEFENCE.png": "/PokeShop/static/media/DEFENCE.dbae28ee8f9991cfbf30.png",
+    "static/media/Shop3.jpg": "/PokeShop/static/media/Shop3.145664693f37f33e4dba.jpg",
+    "static/media/ATTACK.png": "/PokeShop/static/media/ATTACK.e43ead9c644a2d0ff816.png",
+    "static/media/Shop2.jpg": "/PokeShop/static/media/Shop2.57f6a86e1c245d75f8e1.jpg",
+    "static/media/SPECIAL_ATTACK.png": "/PokeShop/static/media/SPECIAL_ATTACK.2d3e9ac34b7ab035faef.png",
+    "static/media/Shop1.jpg": "/PokeShop/static/media/Shop1.91a0d5e09231100e4a57.jpg",
     "index.html": "/PokeShop/index.html",
-    "main.e8b52a5d.css.map": "/PokeShop/static/css/main.e8b52a5d.css.map",
-    "main.4030de6d.js.map": "/PokeShop/static/js/main.4030de6d.js.map",
-    "787.92e57524.chunk.js.map": "/PokeShop/static/js/787.92e57524.chunk.js.map"
+    "main.b73a2f55.css.map": "/PokeShop/static/css/main.b73a2f55.css.map",
+    "main.5c50c6a6.js.map": "/PokeShop/static/js/main.5c50c6a6.js.map"
   },
   "entrypoints": [
-    "static/css/main.e8b52a5d.css",
-    "static/js/main.4030de6d.js"
+    "static/css/main.b73a2f55.css",
+    "static/js/main.5c50c6a6.js"
   ]
 }
