@@ -1,16 +1,11 @@
 .wrapper {
-	.header {
+	.title {
 		padding: 20px;
 		background: #fed61b;
+		font-size: 28px;
+		font-weight: 500;
 
 		border-radius: 20px 0;
-		.title {
-			font-size: 28px;
-			font-weight: 500;
-		}
-		.search {
-			font-size: 18px;
-		}
 	}
 	.text {
 		padding: 20px;

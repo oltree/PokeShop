@@ -5,9 +5,7 @@ import styles from "./index.module.scss";
 const ShopHeader = () => {
   return (
     <div className={styles.wrapper}>
-      <div className={styles.header}>
-        <div className={styles.title}>Pokémons</div>
-      </div>
+      <div className={styles.title}>Pokémons</div>
       <div className={styles.text}>
         Every good Pokemon trainer knows that, when it comes to Pokemon items,
         you have to catch em all! In our Pokemon shop, we have a wide variety of

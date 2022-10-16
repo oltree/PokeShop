@@ -1,26 +1,30 @@
+import { useSelector } from "react-redux";
 import startCase from "lodash/startCase";
 
 import ShopHeader from "../ShopHeader";
+import ProductCard from "../ProductCard";
 import Spinner from "../../../../commonComponents/Spinner";
-import PokemonCard from "../PomemonCard";
 import Pagination from "../../../../commonComponents/Pagination";
+
+import { mergedWithCartSelector } from "../../selectors";
 
 import styles from "./index.module.scss";
 
 const ShopLayout = ({
-  products,
   isLoading,
   error,
   onNavigateToPokemonDetail,
   page,
   onPageChange,
 }) => {
+  const products = useSelector(mergedWithCartSelector);
+
   return (
     <div className={styles.wrapper}>
       <div className={styles.article}>
         <div className={styles.categories}>CATEGORIES</div>
-        <div>content</div>
       </div>
+
       <div className={styles.shopContainer}>
         <ShopHeader />
 
@@ -28,17 +32,19 @@ const ShopLayout = ({
           {isLoading ? (
             <Spinner />
           ) : (
-            products?.map(({ id, name, image, price }) => (
-              <PokemonCard
-                key={id}
-                id={id}
-                name={startCase(name)}
-                image={image}
-                price={price}
-                onNavigateToPokemonDetail={() => onNavigateToPokemonDetail(id)}
+            products?.map((product) => (
+              <ProductCard
+                key={product.id}
+                id={product.id}
+                name={startCase(product.name)}
+                image={product.image}
+                price={product.price}
+                quantity={product.quantity}
+                onNavigateToPokemonDetail={onNavigateToPokemonDetail}
               />
             ))
           )}
+
           {error && <div style={{ color: "red" }}>{error}</div>}
         </div>
 

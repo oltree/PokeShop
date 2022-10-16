@@ -5,6 +5,7 @@ import { persistReducer } from "redux-persist";
 import authSlice from "../pages/SignIn/reducers";
 import shopSlice from "../pages/Shop/reducers";
 import productDetailsSlice from "../pages/ProductDetails/reducers";
+import cartSlice from "../pages/Cart/reducers";
 
 const authPersistConfig = {
   key: "auth",
@@ -16,4 +17,5 @@ export const rootReducer = combineReducers({
   auth: persistReducer(authPersistConfig, authSlice),
   shop: shopSlice,
   productDetails: productDetailsSlice,
+  cart: cartSlice,
 });

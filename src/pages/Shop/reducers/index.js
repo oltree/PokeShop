@@ -22,12 +22,13 @@ export const loadProducts = createAsyncThunk(
 );
 
 const shopSlice = createSlice({
-  name: "pokemons",
+  name: "products",
   initialState,
   reducers: {},
   extraReducers: (builder) => {
     builder.addCase(loadProducts.pending, (state) => {
       state.isLoading = true;
+      state.error = null;
     });
     builder.addCase(loadProducts.fulfilled, (state, { payload: products }) => {
       state.isLoading = false;

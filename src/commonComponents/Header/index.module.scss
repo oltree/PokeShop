@@ -1,6 +1,6 @@
 .wrapper {
 	height: 10vh;
-	margin-bottom: 20px;
+	margin-bottom: 0px;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
@@ -27,11 +27,23 @@
 	.shoppingCart {
 		display: flex;
 		align-items: center;
-		gap: 10px;
+		gap: 20px;
 	}
 
 	.link {
 		padding: 20px;
 		color: #000;
+		font-weight: 500;
+		&__modif {
+			font-weight: 500;
+		}
+	}
+
+	.signIn {
+		display: flex;
+		align-items: center;
+		gap: 5px;
+		color: #000;
+		font-weight: 500;
 	}
 }

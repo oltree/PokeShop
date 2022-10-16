@@ -46,9 +46,9 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div>INSTAGRAMM</div>
+        <div>INSTAGRAM</div>
       </div>
-      <div className={styles.pokemonshop}>© PokeShop ${currentYear}</div>
+      <div className={styles.pokemonshop}>© PokeShop {currentYear}</div>
     </div>
   );
 };

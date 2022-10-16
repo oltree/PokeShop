@@ -26,14 +26,11 @@ export const auth = createAsyncThunk(
 const authSlice = createSlice({
   name: "auth",
   initialState,
-  reducers: {
-    repeatAuth: (state) => {
-      state.error = null;
-    },
-  },
+  reducers: {},
   extraReducers: (builder) => {
     builder.addCase(auth.pending, (state) => {
       state.isLoading = true;
+      state.error = null;
     });
     builder.addCase(auth.fulfilled, (state, { payload }) => {
       const { accessToken, ...data } = payload;
@@ -51,7 +48,5 @@ const authSlice = createSlice({
     });
   },
 });
-
-export const { repeatAuth } = authSlice.actions;
 
 export default authSlice.reducer;

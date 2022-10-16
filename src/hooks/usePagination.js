@@ -1,4 +1,4 @@
-import { useCallback } from "react";
+import { useCallback, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 
 export const usePagination = () => {
@@ -10,6 +10,12 @@ export const usePagination = () => {
     },
     [setSearchParams]
   );
+
+  useEffect(() => {
+    if (searchParams.get("page") === null) {
+      setSearchParams({ page: 1 });
+    }
+  }, [searchParams, setSearchParams]);
 
   return [Number(searchParams.get("page")), handleChangePage];
 };

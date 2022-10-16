@@ -1,9 +1,12 @@
+import { NavLink } from "react-router-dom";
+
 import FormInput from "../../../../commonComponents/FormInput";
+import FormSelect from "../../../../commonComponents/FormSelect";
 import FormTooltip from "../../../../commonComponents/FormTooltip";
 import FormInputPassword from "../../../../commonComponents/FormInputPassword";
-import FormSelect from "../../../../commonComponents/FormSelect";
 
 import { hintTexts } from "../../constants";
+import { ROUTE_NAMES } from "../../../../routes/routeNames";
 
 import styles from "./index.module.scss";
 
@@ -79,9 +82,18 @@ const RegistrationForm = ({ formik }) => {
           </div>
         </FormTooltip>
 
-        <button className={styles.button} type="submit">
-          SIGN UP
-        </button>
+        <div className={styles.buttons}>
+          <div className={styles.account}>
+            <p>Already a member?</p>
+            <NavLink to={ROUTE_NAMES.SIGN_IN} className={styles.accountLink}>
+              Sign in
+            </NavLink>
+          </div>
+
+          <button className={styles.button} type="submit">
+            SIGN UP
+          </button>
+        </div>
       </form>
     </div>
   );

@@ -1,4 +1,4 @@
-import { StrictMode } from "react";
+//import { StrictMode } from "react";
 import ReactDOM from "react-dom/client";
 import { HashRouter } from "react-router-dom";
 import { Provider } from "react-redux";
@@ -17,15 +17,15 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 const persistor = persistStore(store);
 
 root.render(
-  <StrictMode>
-    <HashRouter>
-      <Provider store={store}>
-        <PersistGate loading={null} persistor={persistor}>
-          <MainLayout>
-            <Router />
-          </MainLayout>
-        </PersistGate>
-      </Provider>
-    </HashRouter>
-  </StrictMode>
+  //<StrictMode>
+  <HashRouter>
+    <Provider store={store}>
+      <PersistGate loading={null} persistor={persistor}>
+        <MainLayout>
+          <Router />
+        </MainLayout>
+      </PersistGate>
+    </Provider>
+  </HashRouter>
+  //</StrictMode>
 );

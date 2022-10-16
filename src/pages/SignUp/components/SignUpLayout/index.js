@@ -1,6 +1,6 @@
+import RegistrationForm from "../RegistrationForm";
 import Banner from "../../../../commonComponents/Banner";
 import Spinner from "../../../../commonComponents/Spinner";
-import RegistrationForm from "../RegistrationForm";
 import SnackbarWithAlert from "../../../../commonComponents/Snackbar";
 
 import styles from "./index.module.scss";

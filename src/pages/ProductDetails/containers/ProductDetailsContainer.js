@@ -1,15 +1,17 @@
 import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 
 import ProductDetailsLayout from "../components/ProductDetailsLayout";
 
-import { loadProductDetails } from "../reducers";
 import { productDetailsSelector } from "../selectors";
 
+import { loadProductDetails } from "../reducers";
+
 const ProductDetailsContainer = () => {
-  const dispatch = useDispatch();
   const { id } = useParams();
+
+  const dispatch = useDispatch();
 
   const productDetails = useSelector(productDetailsSelector);
 
@@ -19,9 +21,9 @@ const ProductDetailsContainer = () => {
 
   return (
     <ProductDetailsLayout
+      error={productDetails.error}
       product={productDetails.data}
       isLoading={productDetails.isLoading}
-      error={productDetails.error}
     />
   );
 };

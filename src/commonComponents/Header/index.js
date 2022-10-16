@@ -1,11 +1,14 @@
 import { memo } from "react";
 import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import AccountCircle from "@mui/icons-material/AccountCircle";
 
 import { ROUTE_NAMES } from "../../routes/routeNames";
 import { isAuthSelector } from "../../selectors";
 
 import PokeShopLogotip from "../../static/icons/PokeShopLogotip.png";
+import IconCart from "../IconCart";
+import IconProfile from "../IconProfile";
 
 import styles from "./index.module.scss";
 
@@ -15,35 +18,36 @@ const Header = () => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.logotip}>
-        <Link className={styles.logoLink} to={ROUTE_NAMES.HOME}>
+        <NavLink className={styles.logoLink} to={ROUTE_NAMES.HOME}>
           <img src={PokeShopLogotip} alt="logotip" />
           <p>PokéShop</p>
-        </Link>
+        </NavLink>
       </div>
 
       <div className={styles.menu}>
-        <Link className={styles.link} to={ROUTE_NAMES.SHOP}>
+        <NavLink className={styles.link} to={ROUTE_NAMES.SHOP}>
           SHOP
-        </Link>
-        <Link className={styles.link} to={ROUTE_NAMES.ABOUT_US}>
+        </NavLink>
+        <NavLink className={styles.link} to={ROUTE_NAMES.ABOUT_US}>
           ABOUT US
-        </Link>
+        </NavLink>
       </div>
 
       <div className={styles.shoppingCart}>
         {isAuth ? (
-          <Link className={styles.link} to={ROUTE_NAMES.PROFILE}>
-            PROFILE
-          </Link>
+          <div className={styles.profile}>
+            <IconProfile />
+          </div>
         ) : (
-          <Link className={styles.link} to={ROUTE_NAMES.SIGN_IN}>
+          <NavLink className={styles.signIn} to={ROUTE_NAMES.SIGN_IN}>
+            <AccountCircle color="action" fontSize="large" />
             SIGN IN / REGISTER
-          </Link>
+          </NavLink>
         )}
 
-        <Link className={styles.link} to={ROUTE_NAMES.CART}>
-          CART
-        </Link>
+        <NavLink to={ROUTE_NAMES.CART}>
+          <IconCart />
+        </NavLink>
       </div>
     </div>
   );

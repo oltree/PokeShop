@@ -7,32 +7,33 @@ import ShopLayout from "../components/ShopLayout";
 import { usePagination } from "../../../hooks/usePagination";
 
 import { shopSelector } from "../selectors";
+
 import { loadProducts } from "../reducers";
 import { ROUTE_NAMES } from "../../../routes/routeNames";
 
 const ShopContainers = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const { data, isLoading, error } = useSelector(shopSelector);
+  const { isLoading, error } = useSelector(shopSelector);
   const [page, handlePageChange] = usePagination();
 
   const handleNavigateToPokemonDetail = useCallback(
     (id) => {
       navigate(`${ROUTE_NAMES.SHOP}/${id}`);
     },
-
     [navigate]
   );
 
   useEffect(() => {
-    dispatch(loadProducts(page === 0 ? handlePageChange(null, 1) : page)); //trabl with url???
+    if (page > 0) {
+      dispatch(loadProducts(page));
+    }
   }, [dispatch, page, handlePageChange]);
 
   return (
     <ShopLayout
-      products={data}
-      isLoading={isLoading}
       error={error}
+      isLoading={isLoading}
       onNavigateToPokemonDetail={handleNavigateToPokemonDetail}
       page={page}
       onPageChange={handlePageChange}
