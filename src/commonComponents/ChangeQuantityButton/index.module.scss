@@ -1,0 +1,23 @@
+.wrapper {
+	display: flex;
+	align-items: center;
+	.button {
+		padding: 5px 15px;
+		color: #fff;
+		background: #000;
+		transition: all 0.5s ease-out;
+
+		&:hover {
+			color: rgb(210, 210, 210);
+			background: rgb(13, 13, 13);
+		}
+	}
+	.quantity {
+		width: 40px;
+		padding: 4.5px;
+		text-align: center;
+		background: #fff;
+
+		border: 1px solid #000;
+	}
+}

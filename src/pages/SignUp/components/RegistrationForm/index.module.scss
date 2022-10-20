@@ -1,0 +1,58 @@
+.wrapper {
+	position: absolute;
+	bottom: 3vw;
+	left: 3vw;
+	padding: 2vw 3vw;
+	background: #fff;
+	border-radius: 2.5vw 0;
+}
+
+.title {
+	margin-bottom: 21px;
+	font-size: 1.2vw;
+	font-weight: 500;
+}
+
+.form {
+	width: 395px;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+
+	.tooltip {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.buttons {
+		margin-top: 25px;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		.button {
+			width: 45%;
+			padding: 10px 0;
+
+			color: #fff;
+			background: #000;
+
+			&:hover {
+				color: rgb(210, 210, 210);
+				background: rgb(13, 13, 13);
+			}
+		}
+
+		.account {
+			line-height: 21px;
+
+			.accountLink {
+				color: #000;
+
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+		}
+	}
+}

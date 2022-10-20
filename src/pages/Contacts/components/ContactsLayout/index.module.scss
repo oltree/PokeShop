@@ -1,0 +1,50 @@
+.wrapper {
+	min-height: 67vh;
+	padding: 20px;
+	display: flex;
+	gap: 50px;
+
+	.imageContainer {
+		width: 40%;
+		.image {
+			max-width: 100%;
+		}
+	}
+
+	.contactContainer {
+		width: 60%;
+		.title {
+			padding: 20px;
+			background: #fed61b;
+			border-radius: 20px 0;
+			margin-bottom: 20px;
+			font-size: 30px;
+			font-weight: 500;
+		}
+
+		.subtitle {
+			padding: 0 20px;
+			margin-bottom: 20px;
+			line-height: 20px;
+		}
+
+		.infoContainer {
+			padding: 0 20px;
+			display: flex;
+			gap: 50px;
+			.info {
+				display: flex;
+				flex-direction: column;
+				gap: 5px;
+				p {
+					padding: 5px 10px;
+				}
+				.field {
+					padding: 5px 10px;
+
+					background: #fed61b;
+				}
+			}
+		}
+	}
+}
