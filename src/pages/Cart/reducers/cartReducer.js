@@ -37,7 +37,7 @@ const сartSlice = createSlice({
       state.isLoading = false;
       state.error = error;
     });
-    //////////////////////////////////////////////////////////////////////////////////////
+
     builder.addCase(addItem.pending, (state) => {
       state.isLoading = true;
       state.error = null;
@@ -59,7 +59,7 @@ const сartSlice = createSlice({
       state.isLoading = false;
       state.error = error.message;
     });
-    //////////////////////////////////////////////////////////////////////////////////////
+
     builder.addCase(deleteItem.pending, (state) => {
       state.isLoading = true;
       state.error = null;
@@ -79,7 +79,7 @@ const сartSlice = createSlice({
       state.isLoading = false;
       state.error = error.message;
     });
-    //////////////////////////////////////////////////////////////////////////////////////
+
     builder.addCase(updateItem.pending, (state) => {
       state.isLoading = true;
       state.error = null;

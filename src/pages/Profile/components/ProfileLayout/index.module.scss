@@ -1,0 +1,65 @@
+.wrapper {
+	min-height: 67vh;
+	padding: 20px 0;
+	display: flex;
+	gap: 50px;
+}
+
+.imageContainer {
+	width: 40%;
+	.image {
+		max-width: 100%;
+	}
+}
+
+.personalInfoContainer {
+	width: 60%;
+
+	.title {
+		padding: 20px;
+		font-size: 30px;
+		font-weight: 500;
+		background: #fed61b;
+		border-radius: 20px 0 0 0;
+	}
+
+	.infoContainer {
+		padding: 20px;
+		display: flex;
+		gap: 20px;
+		border: 2px solid #fed61b;
+
+		.info {
+			display: flex;
+			flex-direction: column;
+			gap: 5px;
+			p {
+				padding: 5px 10px;
+			}
+			.field {
+				background: #fed61b;
+			}
+		}
+	}
+
+	.subtitle {
+		padding: 20px;
+		background: #fed61b;
+		font-size: 30px;
+		font-weight: 500;
+	}
+
+	.orderHistoryContainer {
+		padding: 20px;
+		border: 2px solid #fed61b;
+
+		.order {
+			padding: 10px 5px;
+			margin-bottom: 10px;
+			display: flex;
+			justify-content: space-between;
+
+			border: 1px solid #000;
+		}
+	}
+}

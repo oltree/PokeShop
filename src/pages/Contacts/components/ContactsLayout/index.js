@@ -9,7 +9,7 @@ const ContactsLayout = () => {
         <img className={styles.image} src={ContactImage} alt="pokenon" />
       </div>
 
-      <div className={styles.contactContainer}>
+      <div className={styles.contactsContainer}>
         <h1 className={styles.title}>PokéShop</h1>
         <h2 className={styles.subtitle}>
           The concept of the PokéShop is a Pokemon casual shop. This is a small
