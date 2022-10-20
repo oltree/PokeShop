@@ -1,6 +1,6 @@
 .wrapper {
 	min-height: 67vh;
-	padding: 20px;
+	padding: 20px 0;
 	display: flex;
 	gap: 50px;
 
@@ -11,7 +11,7 @@
 		}
 	}
 
-	.contactContainer {
+	.contactsContainer {
 		width: 60%;
 		.title {
 			padding: 20px;

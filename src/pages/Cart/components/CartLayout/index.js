@@ -1,6 +1,7 @@
 import DeleteIcon from "@mui/icons-material/Delete";
 
 import ChangeQuantityButton from "../../../../commonComponents/ChangeQuantityButton";
+import SnackbarWithAlert from "../../../../commonComponents/Snackbar";
 
 import styles from "./index.module.scss";
 
@@ -9,6 +10,7 @@ const CartLayout = ({
   onDeleteItem,
   onIncrementItem,
   onDecrementItem,
+  onCreateOrder,
 }) => {
   return (
     <div className={styles.wrapper}>
@@ -54,9 +56,19 @@ const CartLayout = ({
             <div>Total</div>
             <div>$ {cart?.totalPrice}</div>
           </div>
-          <button className={styles.buttonOrder}>Order</button>
+          <button onClick={onCreateOrder} className={styles.buttonOrder}>
+            Order
+          </button>
         </div>
       </div>
+
+      {!cart.quantity && (
+        <SnackbarWithAlert
+          timeAlert={2000}
+          textAlert="Your order is accepted!"
+          severity="success"
+        />
+      )}
     </div>
   );
 };
