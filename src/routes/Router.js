@@ -9,10 +9,10 @@ import SignInContainer from "../pages/SignIn/containers/SignInContainer";
 import ContactsContainer from "../pages/Contacts/containers/ContactsContainer";
 import ProfileContainer from "../pages/Profile/containers/ProfileContainer";
 import CartContainer from "../pages/Cart/containers/CartContainer";
+import OrderHistoryDetailContainers from "../pages/OrderHistoryDetail/containers/OrderHistoryDetailContainer";
 import PrivateRoutes from "./PrivateRoutes";
 
 import { ROUTE_NAMES } from "./routeNames";
-import OrderHistoryDetailContainers from "../pages/OrderHistoryDetail/containers/OrderHistoryDetailContainer";
 
 const Router = () => {
   return (

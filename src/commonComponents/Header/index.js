@@ -45,7 +45,7 @@ const Header = () => {
           </NavLink>
         )}
 
-        <NavLink to={ROUTE_NAMES.CART}>
+        <NavLink className={styles.cart} to={ROUTE_NAMES.CART}>
           <IconCart />
         </NavLink>
       </div>
