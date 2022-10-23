@@ -18,14 +18,14 @@ const persistor = persistStore(store);
 
 root.render(
   <StrictMode>
-  <HashRouter>
-    <Provider store={store}>
-      <PersistGate loading={null} persistor={persistor}>
-        <MainLayout>
-          <Router />
-        </MainLayout>
-      </PersistGate>
-    </Provider>
-  </HashRouter>
+    <HashRouter>
+      <Provider store={store}>
+        <PersistGate loading={null} persistor={persistor}>
+          <MainLayout>
+            <Router />
+          </MainLayout>
+        </PersistGate>
+      </Provider>
+    </HashRouter>
   </StrictMode>
 );

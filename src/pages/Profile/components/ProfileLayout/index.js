@@ -1,10 +1,10 @@
 import ProfileImage from "../../../../static/images/ProfileImage.png";
-import { customDate } from "../../utils";
+
+import CustomPaginationActionsTable from "../OrdersHistory";
 
 import styles from "./index.module.scss";
 
-const ProfileLayout = ({ userInfo, orders }) => {
-  console.log(orders);
+const ProfileLayout = ({ userInfo, orders, onNavigateOrderHistoryDetail }) => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.imageContainer}>
@@ -35,16 +35,10 @@ const ProfileLayout = ({ userInfo, orders }) => {
 
         <div className={styles.orderHistoryContainer}>
           {orders ? (
-            <div>
-              {orders.map((order) => (
-                <div className={styles.order} key={order._id}>
-                  <div className={styles.time}>
-                    {customDate(order.createdAt)}
-                  </div>
-                  <div className={styles.price}>$ {order.totalPrice}</div>
-                </div>
-              ))}
-            </div>
+            <CustomPaginationActionsTable
+              orders={orders}
+              onNavigateOrderHistoryDetail={onNavigateOrderHistoryDetail}
+            />
           ) : (
             <div>You have no order history</div>
           )}

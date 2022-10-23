@@ -11,6 +11,7 @@ const CartLayout = ({
   onIncrementItem,
   onDecrementItem,
   onCreateOrder,
+  order,
 }) => {
   return (
     <div className={styles.wrapper}>
@@ -18,32 +19,39 @@ const CartLayout = ({
         <div className={styles.cart}>
           <h1 className={styles.title}>My Cart</h1>
 
-          {Object.entries(cart?.itemsList).map(([id, item]) => (
-            <div key={item.id} className={styles.cardContainer}>
-              <div className={styles.card}>
-                <img height={100} src={item.image} alt="pokemon" />
+          {!cart.quantity ? (
+            <div className={styles.titleCart}>
+              Your shopping cart is empty. If you see something you would like
+              to add to your shopping cart when shopping, click Add to Cart.
+            </div>
+          ) : (
+            Object.entries(cart?.itemsList).map(([id, item]) => (
+              <div key={item.id} className={styles.cardContainer}>
+                <div className={styles.card}>
+                  <img height={100} src={item.image} alt="pokemon" />
 
-                <div className={styles.info}>
-                  <div className={styles.name}>{item.name}</div>
-                  <div className={styles.price}>Price: $ {item.price}</div>
+                  <div className={styles.info}>
+                    <div className={styles.name}>{item.name}</div>
+                    <div className={styles.price}>Price: $ {item.price}</div>
+                  </div>
+                </div>
+
+                <div className={styles.buttonsContainer}>
+                  <DeleteIcon
+                    sx={{ cursor: "pointer" }}
+                    onClick={() => onDeleteItem(id)}
+                  />
+
+                  <ChangeQuantityButton
+                    onDecrementItem={onDecrementItem}
+                    quantity={item.quantity}
+                    onIncrementItem={onIncrementItem}
+                    id={item.id}
+                  />
                 </div>
               </div>
-
-              <div className={styles.buttonsContainer}>
-                <DeleteIcon
-                  sx={{ cursor: "pointer" }}
-                  onClick={() => onDeleteItem(id)}
-                />
-
-                <ChangeQuantityButton
-                  onDecrementItem={onDecrementItem}
-                  quantity={item.quantity}
-                  onIncrementItem={onIncrementItem}
-                  id={item.id}
-                />
-              </div>
-            </div>
-          ))}
+            ))
+          )}
         </div>
 
         <div className={styles.totalPriceContainer}>
@@ -62,9 +70,9 @@ const CartLayout = ({
         </div>
       </div>
 
-      {!cart.quantity && (
+      {order.isLoading && (
         <SnackbarWithAlert
-          timeAlert={2000}
+          timeAlert={3000}
           textAlert="Your order is accepted!"
           severity="success"
         />

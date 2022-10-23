@@ -4,6 +4,7 @@
 
 .cartContainer {
 	display: flex;
+	min-width: 67vh;
 	gap: 50px;
 	.cart {
 		width: 75%;
@@ -14,7 +15,6 @@
 			background: #fed61b;
 			font-size: 28px;
 			font-weight: 500;
-
 			border-radius: 20px 0;
 		}
 
@@ -96,4 +96,14 @@
 			}
 		}
 	}
+}
+
+.titleCart {
+	width: 700px;
+	padding: 40px;
+	margin: 0 auto;
+	color: rgb(129, 129, 129);
+	font-size: 20px;
+	line-height: 24px;
+	text-align: center;
 }

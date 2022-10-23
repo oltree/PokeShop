@@ -1,0 +1,19 @@
+.wrapper {
+	width: 100%;
+
+	.order {
+		display: flex;
+		justify-content: space-between;
+		padding: 10px 5px;
+		border: 1px solid rgb(211, 211, 211);
+		margin-bottom: 10px;
+	}
+
+	.link {
+		color: #000;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}

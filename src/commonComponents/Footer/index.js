@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { ROUTE_NAMES } from "../../routes/routeNames";
 
 import PokeShopLogotip from "../../static/icons/PokeShopLogotip.png";
+import Instagram from "../../static/icons/instagram.png";
 
 import styles from "./index.module.scss";
 
@@ -21,9 +22,17 @@ const Footer = () => {
             </Link>
           </div>
           <div className={styles.email}>
-            Need to get in touch? Just email us at o.melex@bk.ru
+            Need to get in touch? Just email us at{" "}
+            <a
+              href="https://mail.ru/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              o.melex@bk.ru
+            </a>
           </div>
         </div>
+
         <div className={styles.infoContainer}>
           <div className={styles.info}>
             <h2 className={styles.title}>EXPLORE</h2>
@@ -46,7 +55,16 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div>INSTAGRAM</div>
+
+        <div className={styles.instagramContainer}>
+          <a
+            href="https://www.instagram.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src={Instagram} alt="instagram" />
+          </a>
+        </div>
       </div>
       <div className={styles.pokemonshop}>© PokeShop {currentYear}</div>
     </div>

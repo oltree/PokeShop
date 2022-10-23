@@ -11,7 +11,7 @@ const LoginLayout = ({ formik, isAuth, error, isLoading }) => {
       <Banner />
       <SignInForm formik={formik} />
 
-      {isLoading && <Spinner />}
+      {isLoading && <Spinner color="black" />}
 
       {isAuth && (
         <SnackbarWithAlert

@@ -17,7 +17,6 @@ const StyledMenu = styled(Menu)(() => ({
     width: 150,
     display: "flex",
     flexDirection: "column",
-    gap: 10,
     background: "#fff",
   },
 }));

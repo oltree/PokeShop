@@ -12,6 +12,7 @@ import CartContainer from "../pages/Cart/containers/CartContainer";
 import PrivateRoutes from "./PrivateRoutes";
 
 import { ROUTE_NAMES } from "./routeNames";
+import OrderHistoryDetailContainers from "../pages/OrderHistoryDetail/containers/OrderHistoryDetailContainer";
 
 const Router = () => {
   return (
@@ -27,6 +28,10 @@ const Router = () => {
           element={<ProductDetailsContainer />}
         />
         <Route path={ROUTE_NAMES.PROFILE} element={<ProfileContainer />} />
+        <Route
+          path={ROUTE_NAMES.ORDER_HISTORY_DETAIL}
+          element={<OrderHistoryDetailContainers />}
+        />
         <Route path={ROUTE_NAMES.CART} element={<CartContainer />} />
       </Route>
 

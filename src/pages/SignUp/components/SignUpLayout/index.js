@@ -9,7 +9,11 @@ const SignUpLayout = ({ formik, data, error, isLoading }) => {
   return (
     <div className={styles.wrapper}>
       <Banner />
-      {isLoading ? <Spinner /> : <RegistrationForm formik={formik} />}
+      {isLoading ? (
+        <Spinner color="black" />
+      ) : (
+        <RegistrationForm formik={formik} />
+      )}
 
       {data?.data.message && (
         <SnackbarWithAlert

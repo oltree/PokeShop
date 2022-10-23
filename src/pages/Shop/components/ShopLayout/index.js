@@ -30,7 +30,7 @@ const ShopLayout = ({
 
         <div className={styles.shop}>
           {isLoading ? (
-            <Spinner />
+            <Spinner color="yellow" />
           ) : (
             products?.map((product) => (
               <ProductCard

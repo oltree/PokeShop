@@ -1,4 +1,5 @@
-import { useEffect } from "react";
+import { useEffect, useCallback } from "react";
+import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
 import ProfileLayout from "../components/ProfileLayout";
@@ -8,18 +9,35 @@ import { orderSelector } from "../../Cart/selectors";
 
 import { getOrders } from "../../Cart/thunks";
 
+import { ROUTE_NAMES } from "../../../routes/routeNames";
+
 const ProfileContainer = () => {
   const dispatch = useDispatch();
+
+  const navigate = useNavigate();
 
   const userInfo = useSelector(userInfoSelector);
 
   const orders = useSelector(orderSelector);
 
+  const handleNavigateOrderHistoryDetail = useCallback(
+    (id) => {
+      navigate(`${ROUTE_NAMES.PROFILE}/${id}`);
+    },
+    [navigate]
+  );
+
   useEffect(() => {
     dispatch(getOrders());
   }, [dispatch]);
 
-  return <ProfileLayout userInfo={userInfo} orders={orders.data} />;
+  return (
+    <ProfileLayout
+      userInfo={userInfo}
+      orders={orders}
+      onNavigateOrderHistoryDetail={handleNavigateOrderHistoryDetail}
+    />
+  );
 };
 
 export default ProfileContainer;
