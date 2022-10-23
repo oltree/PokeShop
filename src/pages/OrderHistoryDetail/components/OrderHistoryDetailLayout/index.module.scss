@@ -1,0 +1,41 @@
+.wrapper {
+	.title {
+		padding: 20px;
+		font-size: 30px;
+		font-weight: 500;
+		background: #fed61b;
+		border-radius: 20px 0 0 0;
+	}
+
+	.orderContainer {
+		min-height: 65vh;
+		padding: 20px;
+		border: 2px solid #fed61b;
+		border-radius: 0 0 20px 0;
+
+		.order {
+			margin-bottom: 20px;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+
+			.name {
+				font-size: 28px;
+			}
+
+			.orderInfo {
+				width: 150px;
+				.info {
+					margin-bottom: 10px;
+					font-weight: 500;
+				}
+			}
+		}
+
+		.totalPrice {
+			font-size: 28px;
+			font-weight: 500;
+			text-align: right;
+		}
+	}
+}

@@ -10,12 +10,15 @@ const theme = createTheme({
     yellow: {
       main: "#fed61b",
     },
+    black: {
+      main: "#000",
+    },
   },
 });
 
-const Spinner = () => (
+const Spinner = ({ color }) => (
   <ThemeProvider theme={theme}>
-    <CircularProgress color="yellow" className={styles.spiner} />
+    <CircularProgress color={color} className={styles.spiner} />
   </ThemeProvider>
 );
 

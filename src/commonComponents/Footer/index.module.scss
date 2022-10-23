@@ -26,8 +26,16 @@
 				max-width: 250px;
 				font-size: 14px;
 				line-height: 20px;
+				a {
+					color: #000;
+
+					&:hover {
+						text-decoration: underline;
+					}
+				}
 			}
 		}
+
 		.infoContainer {
 			display: flex;
 			gap: 200px;
@@ -47,6 +55,10 @@
 					}
 				}
 			}
+		}
+
+		.instagramContainer {
+			margin-top: 30px;
 		}
 	}
 	.pokemonshop {

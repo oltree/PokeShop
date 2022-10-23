@@ -8,4 +8,5 @@ export const ROUTE_NAMES = {
   CONTACTS: "/contacts",
   PROFILE: "/profile",
   CART: "/cart",
+  ORDER_HISTORY_DETAIL: "/profile/:id",
 };

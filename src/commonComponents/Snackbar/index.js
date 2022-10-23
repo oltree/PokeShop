@@ -9,7 +9,7 @@ const SnackbarWithAlert = ({ timeAlert, textAlert, severity }) => {
 
   return (
     <Snackbar
-      anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
+      anchorOrigin={{ vertical: "top", horizontal: "right" }}
       open={open}
       autoHideDuration={timeAlert}
       onClose={handleClose}

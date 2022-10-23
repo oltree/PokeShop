@@ -1,5 +1,5 @@
 import { useCallback } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 import CartLayout from "../components/CartLayout";
 
@@ -9,6 +9,8 @@ import { createNewOrder } from "../thunks";
 
 const CartContainer = () => {
   const dispatch = useDispatch();
+
+  const order = useSelector((state) => state.order);
 
   const { cart, handleDeleteItem, handleIncrementItem, handleDecrementItem } =
     useCart();
@@ -32,6 +34,7 @@ const CartContainer = () => {
       onIncrementItem={handleIncrementItem}
       onDecrementItem={handleDecrementItem}
       onCreateOrder={handleCreateOrder}
+      order={order}
     />
   );
 };
