@@ -64,7 +64,11 @@ const CartLayout = ({
             <div>Total</div>
             <div>$ {cart?.totalPrice}</div>
           </div>
-          <button onClick={onCreateOrder} className={styles.buttonOrder}>
+          <button
+            disabled={!cart.quantity}
+            onClick={onCreateOrder}
+            className={styles.buttonOrder}
+          >
             Order
           </button>
         </div>

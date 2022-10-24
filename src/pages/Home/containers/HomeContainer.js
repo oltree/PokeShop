@@ -12,7 +12,7 @@ const HomeContainer = () => {
 
   const isAuth = useSelector(isAuthSelector);
 
-  const handleNavigate = useCallback(() => {
+  const handleNavigateToShop = useCallback(() => {
     if (isAuth) {
       navigate(ROUTE_NAMES.SHOP);
     } else {
@@ -20,7 +20,7 @@ const HomeContainer = () => {
     }
   }, [isAuth, navigate]);
 
-  return <HomeLayout onNavigate={handleNavigate} />;
+  return <HomeLayout onNavigateToShop={handleNavigateToShop} />;
 };
 
 export default HomeContainer;
