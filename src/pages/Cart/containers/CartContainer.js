@@ -30,6 +30,7 @@ const CartContainer = () => {
   return (
     <CartLayout
       cart={cart}
+      isLoading={cart.isLoading}
       onDeleteItem={handleDeleteItem}
       onIncrementItem={handleIncrementItem}
       onDecrementItem={handleDecrementItem}

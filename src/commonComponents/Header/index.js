@@ -3,12 +3,13 @@ import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import AccountCircle from "@mui/icons-material/AccountCircle";
 
-import { ROUTE_NAMES } from "../../routes/routeNames";
-import { isAuthSelector } from "../../selectors";
-
 import PokeShopLogotip from "../../static/icons/PokeShopLogotip.png";
 import IconCart from "../IconCart";
 import IconProfile from "../IconProfile";
+
+import { isAuthSelector } from "../../selectors";
+
+import { ROUTE_NAMES } from "../../routes/routeNames";
 
 import styles from "./index.module.scss";
 

@@ -6,6 +6,7 @@
 	display: flex;
 	min-width: 67vh;
 	gap: 50px;
+
 	.cart {
 		width: 75%;
 
@@ -99,11 +100,19 @@
 }
 
 .titleCart {
-	width: 700px;
+	width: 800px;
 	padding: 40px;
 	margin: 0 auto;
-	color: rgb(129, 129, 129);
+	color: rgb(167, 166, 166);
 	font-size: 20px;
 	line-height: 24px;
 	text-align: center;
+}
+
+.linkShop {
+	color: #000;
+
+	&:hover {
+		text-decoration: underline;
+	}
 }

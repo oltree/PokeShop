@@ -6,6 +6,8 @@ export const cartItemsListSelector = (state) => state.cart.itemsList;
 
 export const orderSelector = (state) => state.order.data;
 
+export const orderIsLoading = (state) => state.order.isLoading;
+
 export const orderDetailsSelector = createSelector(
   orderSelector,
   (state, id) => id,
