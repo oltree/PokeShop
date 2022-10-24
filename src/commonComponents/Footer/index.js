@@ -1,5 +1,6 @@
 import { memo } from "react";
 import { Link } from "react-router-dom";
+import moment from "moment";
 
 import { ROUTE_NAMES } from "../../routes/routeNames";
 
@@ -9,7 +10,7 @@ import Instagram from "../../static/icons/instagram.png";
 import styles from "./index.module.scss";
 
 const Footer = () => {
-  const currentYear = new Date().getFullYear();
+  const currentYear = moment().format("YYYY");
 
   return (
     <div className={styles.wrapper}>

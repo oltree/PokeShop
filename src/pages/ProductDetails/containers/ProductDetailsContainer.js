@@ -9,9 +9,9 @@ import { productDetailsSelector } from "../selectors";
 import { loadProductDetails } from "../reducers";
 
 const ProductDetailsContainer = () => {
-  const { id } = useParams();
-
   const dispatch = useDispatch();
+
+  const { id } = useParams();
 
   const productDetails = useSelector(productDetailsSelector);
 

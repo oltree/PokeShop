@@ -4,7 +4,11 @@ import { useDispatch, useSelector } from "react-redux";
 
 import OrderHistoryDetailLayout from "../components/OrderHistoryDetailLayout";
 
-import { orderDetailsSelector, orderSelector } from "../../Cart/selectors";
+import {
+  orderDetailsSelector,
+  orderIsLoading,
+  orderSelector,
+} from "../../Cart/selectors";
 
 import { getOrders } from "../../Cart/thunks";
 
@@ -17,13 +21,17 @@ const OrderHistoryDetailContainers = () => {
 
   const orderItems = useSelector((state) => orderDetailsSelector(state, id));
 
+  const isLoading = useSelector(orderIsLoading);
+
   useEffect(() => {
     if (!orders) {
       dispatch(getOrders());
     }
   }, [orders, dispatch]);
 
-  return <OrderHistoryDetailLayout orderItems={orderItems} />;
+  return (
+    <OrderHistoryDetailLayout orderItems={orderItems} isLoading={isLoading} />
+  );
 };
 
 export default OrderHistoryDetailContainers;

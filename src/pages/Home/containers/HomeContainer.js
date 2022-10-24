@@ -2,10 +2,11 @@ import { useCallback } from "react";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
-import { ROUTE_NAMES } from "../../../routes/routeNames";
+import HomeLayout from "../components/HomeLayout";
+
 import { isAuthSelector } from "../../../selectors";
 
-import HomeLayout from "../components/HomeLayout";
+import { ROUTE_NAMES } from "../../../routes/routeNames";
 
 const HomeContainer = () => {
   const navigate = useNavigate();

@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import ProfileLayout from "../components/ProfileLayout";
 
 import { userInfoSelector } from "../../SignIn/selectors";
-import { orderSelector } from "../../Cart/selectors";
+import { orderIsLoading, orderSelector } from "../../Cart/selectors";
 
 import { getOrders } from "../../Cart/thunks";
 
@@ -20,6 +20,8 @@ const ProfileContainer = () => {
 
   const orders = useSelector(orderSelector);
 
+  const isLoading = useSelector(orderIsLoading);
+
   const handleNavigateOrderHistoryDetail = useCallback(
     (id) => {
       navigate(`${ROUTE_NAMES.PROFILE}/${id}`);
@@ -33,8 +35,9 @@ const ProfileContainer = () => {
 
   return (
     <ProfileLayout
-      userInfo={userInfo}
       orders={orders}
+      userInfo={userInfo}
+      isLoading={isLoading}
       onNavigateOrderHistoryDetail={handleNavigateOrderHistoryDetail}
     />
   );

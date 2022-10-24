@@ -9,12 +9,16 @@ import { usePagination } from "../../../hooks/usePagination";
 import { shopSelector } from "../selectors";
 
 import { loadProducts } from "../reducers";
+
 import { ROUTE_NAMES } from "../../../routes/routeNames";
 
 const ShopContainers = () => {
   const dispatch = useDispatch();
+
   const navigate = useNavigate();
+
   const { isLoading, error } = useSelector(shopSelector);
+
   const [page, handlePageChange] = usePagination();
 
   const handleNavigateToPokemonDetail = useCallback(
