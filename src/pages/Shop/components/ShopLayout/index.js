@@ -21,9 +21,9 @@ const ShopLayout = ({
 
   return (
     <div className={styles.wrapper}>
-      <div className={styles.article}>
+      {/* <div className={styles.article}>
         <div className={styles.categories}>CATEGORIES</div>
-      </div>
+      </div> */}
 
       <div className={styles.shopContainer}>
         <ShopHeader />
