@@ -1,6 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
-import { signIn } from "../api";
+import AuthService from "../../../services/AuthService";
+
 import { LOCAL_STORAGE_KEYS } from "../../../constants";
 
 const initialState = {
@@ -14,7 +15,7 @@ export const auth = createAsyncThunk(
   "auth/login",
   async (data, { rejectWithValue }) => {
     try {
-      const response = await signIn(data);
+      const response = await AuthService.signIn(data);
 
       return response;
     } catch (error) {

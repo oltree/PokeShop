@@ -6,7 +6,8 @@ import SignUpLayout from "../components/SignUpLayout";
 
 import { useFetching } from "../../../hooks";
 
-import { signUp } from "../api";
+import AuthService from "../../../services/AuthService";
+
 import { SignUpSchema } from "../validation";
 import { ROUTE_NAMES } from "../../../routes/routeNames";
 
@@ -14,7 +15,7 @@ const SignUpContainer = () => {
   const navigate = useNavigate();
 
   const [data, isLoading, error, makeRequest] = useFetching(
-    signUp,
+    AuthService.signUp,
     null,
     false
   );
