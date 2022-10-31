@@ -18,7 +18,7 @@ const FormSelect = ({
       id="gender-label"
       color={errors && touched ? "error" : "success"}
     >
-      {errors ? errors : "Gender"}
+      {errors || "Gender"}
     </InputLabel>
     <Select
       labelId="gender-label"
@@ -28,8 +28,8 @@ const FormSelect = ({
       color={errors && touched ? "error" : "success"}
       onBlur={onBlur}
     >
-      <MenuItem value={"male"}>Male</MenuItem>
-      <MenuItem value={"female"}>Female</MenuItem>
+      <MenuItem value="male">Male</MenuItem>
+      <MenuItem value="female">Female</MenuItem>
     </Select>
   </FormControl>
 );

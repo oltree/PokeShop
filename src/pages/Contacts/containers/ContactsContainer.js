@@ -1,7 +1,5 @@
 import ContactsLayout from "../components/ContactsLayout";
 
-const ContactsContainer = () => {
-  return <ContactsLayout />;
-};
+const ContactsContainer = () => <ContactsLayout />;
 
 export default ContactsContainer;

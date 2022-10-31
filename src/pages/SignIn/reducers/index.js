@@ -43,7 +43,6 @@ const authSlice = createSlice({
       localStorage.setItem(LOCAL_STORAGE_KEYS.ACCESS_TOKEN, accessToken);
     });
     builder.addCase(auth.rejected, (state, { payload: error }) => {
-      console.log(error);
       state.isLoading = false;
       state.error = error;
     });

@@ -1,3 +1,5 @@
+import Omit from "lodash/omit";
+
 import { createSlice } from "@reduxjs/toolkit";
 
 import { getCartInfo, addItem, deleteItem, updateItem } from "../thunks";
@@ -71,9 +73,7 @@ const сartSlice = createSlice({
       state.totalPrice = totalPrice;
       state.quantity = quantity;
 
-      const _ = require("lodash");
-
-      state.itemsList = _.omit(state.itemsList, payload.removedItemId);
+      state.itemsList = Omit(state.itemsList, payload.removedItemId);
     });
     builder.addCase(deleteItem.rejected, (state, { payload: error }) => {
       state.isLoading = false;

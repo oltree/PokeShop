@@ -1,7 +1,5 @@
 import AboutUsLayout from "../components/AboutUsLayout";
 
-const AboutUsContainer = () => {
-  return <AboutUsLayout />;
-};
+const AboutUsContainer = () => <AboutUsLayout />;
 
 export default AboutUsContainer;

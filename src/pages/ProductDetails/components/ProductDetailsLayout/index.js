@@ -1,10 +1,11 @@
-import { useCart } from "../../../../hooks/useCart";
 import lowerCase from "lodash/lowerCase";
 import startCase from "lodash/startCase";
 import DeleteIcon from "@mui/icons-material/Delete";
 
 import Spinner from "../../../../commonComponents/Spinner";
 import ChangeQuantityButton from "../ChangeQuantityButton";
+
+import { useCart } from "../../../../hooks/useCart";
 
 import HP from "../../../../static/icons/HP.png";
 import ATTACK from "../../../../static/icons/ATTACK.png";
@@ -26,9 +27,10 @@ const ProductDetailsLayout = ({ product, isLoading, error }) => {
     handleDecrementItem,
   } = useCart();
 
-  const productStatsWithIcons = product.stats?.map((stat, index) => {
-    return { ...stat, icon: favicon[index] };
-  });
+  const productStatsWithIcons = product.stats?.map((stat, index) => ({
+    ...stat,
+    icon: favicon[index],
+  }));
 
   return (
     <>

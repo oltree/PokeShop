@@ -13,7 +13,7 @@ export const orderDetailsSelector = createSelector(
   (state, id) => id,
   (order, id) => {
     if (order && id) {
-      const orderItem = order.find((order) => order._id === id);
+      const orderItem = order.find((item) => item._id === id);
 
       return orderItem?.itemsList;
     }

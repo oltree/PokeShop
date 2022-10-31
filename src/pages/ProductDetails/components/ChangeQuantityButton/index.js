@@ -7,36 +7,34 @@ const ChangeQuantityButton = ({
   quantity,
   onIncrementItem,
   id,
-}) => {
-  return (
-    <div className={styles.wrapper}>
-      <button
-        onClick={() =>
-          onDecrementItem({
-            id,
-            quantity,
-          })
-        }
-        className={styles.button}
-      >
-        -
-      </button>
+}) => (
+  <div className={styles.wrapper}>
+    <button
+      onClick={() =>
+        onDecrementItem({
+          id,
+          quantity,
+        })
+      }
+      className={styles.button}
+    >
+      -
+    </button>
 
-      <div className={styles.quantity}>{quantity}</div>
+    <div className={styles.quantity}>{quantity}</div>
 
-      <button
-        onClick={() =>
-          onIncrementItem({
-            id,
-            quantity,
-          })
-        }
-        className={styles.button}
-      >
-        +
-      </button>
-    </div>
-  );
-};
+    <button
+      onClick={() =>
+        onIncrementItem({
+          id,
+          quantity,
+        })
+      }
+      className={styles.button}
+    >
+      +
+    </button>
+  </div>
+);
 
 export default memo(ChangeQuantityButton);

@@ -10,14 +10,14 @@ export const useFetching = (
   const [error, setError] = useState(null);
 
   const handleDataLoad = useCallback(
-    async (data) => {
+    async (currentData) => {
       setLoading(true);
       try {
-        const response = await asyncCallback(data);
+        const response = await asyncCallback(currentData);
 
         setData(response);
-      } catch (error) {
-        setError(error);
+      } catch (err) {
+        setError(err);
       } finally {
         setLoading(false);
       }
