@@ -1,4 +1,5 @@
 import { memo } from "react";
+import { PropTypes } from "prop-types";
 
 import InputLabel from "@mui/material/InputLabel";
 import FormControl from "@mui/material/FormControl";
@@ -33,5 +34,14 @@ const FormSelect = ({
     </Select>
   </FormControl>
 );
+
+FormSelect.propTypes = {
+  name: PropTypes.string.isRequired,
+  errors: PropTypes.func.isRequired,
+  value: PropTypes.string.isRequired,
+  onFormikChange: PropTypes.func.isRequired,
+  onBlur: PropTypes.func.isRequired,
+  touched: PropTypes.bool.isRequired,
+};
 
 export default memo(FormSelect);

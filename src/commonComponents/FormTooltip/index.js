@@ -1,4 +1,6 @@
 import { memo } from "react";
+import { PropTypes } from "prop-types";
+
 import { styled } from "@mui/material/styles";
 import Tooltip, { tooltipClasses } from "@mui/material/Tooltip";
 
@@ -17,5 +19,10 @@ const HtmlTooltip = styled(({ className, ...props }) => (
 const FormTooltip = ({ title, children }) => (
   <HtmlTooltip title={title}>{children}</HtmlTooltip>
 );
+
+FormTooltip.propTypes = {
+  title: PropTypes.string.isRequired,
+  children: PropTypes.element.isRequired,
+};
 
 export default memo(FormTooltip);

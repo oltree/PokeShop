@@ -1,3 +1,5 @@
+import { PropTypes } from "prop-types";
+
 import Header from "../Header";
 import Footer from "../Footer";
 
@@ -10,5 +12,9 @@ const MainLayout = ({ children }) => (
     <Footer />
   </div>
 );
+
+MainLayout.propTypes = {
+  children: PropTypes.element.isRequired,
+};
 
 export default MainLayout;

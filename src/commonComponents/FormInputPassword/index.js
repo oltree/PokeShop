@@ -1,4 +1,5 @@
 import { memo, useState, useCallback } from "react";
+import { PropTypes } from "prop-types";
 
 import IconButton from "@mui/material/IconButton";
 import Input from "@mui/material/Input";
@@ -33,6 +34,7 @@ const FormInputPassword = ({
       <InputLabel color={errors ? "error" : "success"}>
         {errors && touched ? `Password: ${errors}` : "Password"}
       </InputLabel>
+
       <Input
         name={name}
         autoComplete="off"
@@ -51,6 +53,15 @@ const FormInputPassword = ({
       />
     </FormControl>
   );
+};
+
+FormInputPassword.propTypes = {
+  name: PropTypes.string.isRequired,
+  errors: PropTypes.func.isRequired,
+  value: PropTypes.string.isRequired,
+  onFormikChange: PropTypes.func.isRequired,
+  onBlur: PropTypes.func.isRequired,
+  touched: PropTypes.bool.isRequired,
 };
 
 export default memo(FormInputPassword);

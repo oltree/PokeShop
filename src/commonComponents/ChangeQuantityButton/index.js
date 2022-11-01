@@ -1,21 +1,18 @@
 import { memo } from "react";
+import { PropTypes } from "prop-types";
 
 import styles from "./index.module.scss";
 
 const ChangeQuantityButton = ({
   onDecrementItem,
-  quantity,
   onIncrementItem,
+  quantity,
   id,
 }) => (
   <div className={styles.wrapper}>
     <button
-      onClick={() =>
-        onDecrementItem({
-          id,
-          quantity,
-        })
-      }
+      type="submit"
+      onClick={() => onDecrementItem({ id, quantity })}
       className={styles.button}
     >
       -
@@ -24,17 +21,20 @@ const ChangeQuantityButton = ({
     <div className={styles.quantity}>{quantity}</div>
 
     <button
-      onClick={() =>
-        onIncrementItem({
-          id,
-          quantity,
-        })
-      }
+      type="submit"
+      onClick={() => onIncrementItem({ id, quantity })}
       className={styles.button}
     >
       +
     </button>
   </div>
 );
+
+ChangeQuantityButton.propTypes = {
+  onDecrementItem: PropTypes.func.isRequired,
+  quantity: PropTypes.number.isRequired,
+  onIncrementItem: PropTypes.func.isRequired,
+  id: PropTypes.string.isRequired,
+};
 
 export default memo(ChangeQuantityButton);

@@ -1,11 +1,11 @@
 import { memo } from "react";
 import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
-import { styled } from "@mui/material/styles";
 
-import AccountCircle from "@mui/icons-material/AccountCircle";
-import MenuItem from "@mui/material/MenuItem";
+import { styled } from "@mui/material/styles";
 import Menu from "@mui/material/Menu";
+import MenuItem from "@mui/material/MenuItem";
+import AccountCircle from "@mui/icons-material/AccountCircle";
 import PopupState, { bindTrigger, bindMenu } from "material-ui-popup-state";
 
 import { ROUTE_NAMES } from "../../routes/routeNames";
@@ -22,7 +22,9 @@ const StyledMenu = styled(Menu)(() => ({
 }));
 
 const IconProfile = () => {
-  const userName = useSelector((state) => state.auth.data);
+  const user = useSelector((state) => state.auth.data);
+
+  const name = `${user.firstName} ${user.lastName}`;
 
   const handleLogoutInProfile = () => {
     localStorage.clear();
@@ -35,7 +37,7 @@ const IconProfile = () => {
         <div>
           <div className={styles.profile} {...bindTrigger(popupState)}>
             <AccountCircle color="action" fontSize="large" />
-            {userName.firstName} {userName.lastName}
+            {name}
           </div>
           <StyledMenu {...bindMenu(popupState)}>
             <MenuItem onClick={popupState.close}>

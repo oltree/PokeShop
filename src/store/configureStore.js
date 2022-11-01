@@ -1,4 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
+
 import { PERSIST } from "redux-persist/es/constants";
 
 import { rootReducer } from "./rootReducer";
