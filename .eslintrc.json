@@ -47,7 +47,7 @@
     "react/jsx-props-no-spreading": [
       "warn",
       {
-        "exceptions": ["Tooltip"]
+        "exceptions": ["Tooltip", "div", "StyledMenu"]
       }
     ],
     "react/jsx-wrap-multilines": "off"
