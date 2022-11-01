@@ -1,6 +1,7 @@
 import { memo } from "react";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { PropTypes } from "prop-types";
 
+import { createTheme, ThemeProvider } from "@mui/material/styles";
 import CircularProgress from "@mui/material/CircularProgress";
 
 import styles from "./index.module.scss";
@@ -21,5 +22,9 @@ const Spinner = ({ color }) => (
     <CircularProgress color={color} className={styles.spiner} />
   </ThemeProvider>
 );
+
+Spinner.propTypes = {
+  color: PropTypes.string.isRequired,
+};
 
 export default memo(Spinner);

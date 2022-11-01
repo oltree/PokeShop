@@ -1,6 +1,7 @@
 import { memo } from "react";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { PropTypes } from "prop-types";
 
+import { createTheme, ThemeProvider } from "@mui/material/styles";
 import MaterialPagination from "@mui/material/Pagination";
 
 const theme = createTheme({
@@ -23,5 +24,11 @@ const Pagination = ({ currentPage, onPageChange, isDisabled }) => (
     />
   </ThemeProvider>
 );
+
+Pagination.propTypes = {
+  currentPage: PropTypes.number.isRequired,
+  onPageChange: PropTypes.func.isRequired,
+  isDisabled: PropTypes.func.isRequired,
+};
 
 export default memo(Pagination);

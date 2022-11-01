@@ -2,7 +2,7 @@ import axios from "axios";
 
 import { LOCAL_STORAGE_KEYS } from "../constants";
 
-const api = axios.create({
+export const api = axios.create({
   baseURL: "https://poke-store-api.herokuapp.com",
 });
 
@@ -15,5 +15,3 @@ api.interceptors.request.use((request) => {
 
   return request;
 });
-
-export { api };

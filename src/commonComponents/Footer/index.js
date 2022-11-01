@@ -1,16 +1,16 @@
 import { memo } from "react";
-import { Link } from "react-router-dom";
 import moment from "moment";
-
-import { ROUTE_NAMES } from "../../routes/routeNames";
+import { Link } from "react-router-dom";
 
 import PokeShopLogotip from "../../static/icons/PokeShopLogotip.png";
 import Instagram from "../../static/icons/instagram.png";
 
+import { ROUTE_NAMES } from "../../routes/routeNames";
+
 import styles from "./index.module.scss";
 
 const Footer = () => {
-  const currentYear = moment().format("YYYY");
+  const logoAndCurrentYear = `© PokeShop ${moment().format("YYYY")}`;
 
   return (
     <div className={styles.wrapper}>
@@ -23,7 +23,7 @@ const Footer = () => {
             </Link>
           </div>
           <div className={styles.email}>
-            Need to get in touch? Just email us at{" "}
+            <p>Need to get in touch? Just email us at</p>
             <a
               href="https://mail.ru/"
               target="_blank"
@@ -37,6 +37,7 @@ const Footer = () => {
         <div className={styles.infoContainer}>
           <div className={styles.info}>
             <h2 className={styles.title}>EXPLORE</h2>
+
             <div className={styles.linkContainer}>
               <Link className={styles.link} to={ROUTE_NAMES.SHOP}>
                 Shop
@@ -49,6 +50,7 @@ const Footer = () => {
 
           <div className={styles.info}>
             <h2 className={styles.title}>HELP</h2>
+
             <div className={styles.linkContainer}>
               <Link className={styles.link} to={ROUTE_NAMES.CONTACTS}>
                 Contacts
@@ -67,7 +69,7 @@ const Footer = () => {
           </a>
         </div>
       </div>
-      <div className={styles.pokemonshop}>© PokeShop {currentYear}</div>
+      <div className={styles.pokemonshop}>{logoAndCurrentYear}</div>
     </div>
   );
 };

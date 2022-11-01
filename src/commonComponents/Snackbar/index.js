@@ -1,4 +1,5 @@
 import { memo, useState } from "react";
+import { PropTypes } from "prop-types";
 
 import Snackbar from "@mui/material/Snackbar";
 import Alert from "@mui/material/Alert";
@@ -19,6 +20,12 @@ const SnackbarWithAlert = ({ timeAlert, textAlert, severity }) => {
       </Alert>
     </Snackbar>
   );
+};
+
+SnackbarWithAlert.propTypes = {
+  timeAlert: PropTypes.string.isRequired,
+  textAlert: PropTypes.string.isRequired,
+  severity: PropTypes.string.isRequired,
 };
 
 export default memo(SnackbarWithAlert);

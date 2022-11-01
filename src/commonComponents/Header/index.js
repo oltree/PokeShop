@@ -1,13 +1,15 @@
 import { memo } from "react";
 import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
+
 import AccountCircle from "@mui/icons-material/AccountCircle";
 
-import PokeShopLogotip from "../../static/icons/PokeShopLogotip.png";
 import IconCart from "../IconCart";
 import IconProfile from "../IconProfile";
 
 import { isAuthSelector } from "../../selectors";
+
+import PokeShopLogotip from "../../static/icons/PokeShopLogotip.png";
 
 import { ROUTE_NAMES } from "../../routes/routeNames";
 

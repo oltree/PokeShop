@@ -1,4 +1,6 @@
 import { NavLink } from "react-router-dom";
+import { PropTypes } from "prop-types";
+
 import DeleteIcon from "@mui/icons-material/Delete";
 
 import ChangeQuantityButton from "../../../../commonComponents/ChangeQuantityButton";
@@ -28,8 +30,10 @@ const CartLayout = ({
 
           {!cart.quantity ? (
             <div className={styles.titleCart}>
-              Your shopping cart is empty. If you see something you would like
-              to add to your shopping cart when shopping, click Add to Cart.{" "}
+              <p>
+                Your shopping cart is empty. If you see something you would like
+                to add to your shopping cart when shopping, click Add to Cart.
+              </p>
               <NavLink className={styles.linkShop} to={ROUTE_NAMES.SHOP}>
                 Follow the link?
               </NavLink>
@@ -42,7 +46,10 @@ const CartLayout = ({
 
                   <div className={styles.info}>
                     <div className={styles.name}>{item.name}</div>
-                    <div className={styles.price}>Price: $ {item.price}</div>
+                    <div className={styles.price}>
+                      <p>Price: $ </p>
+                      <p>{item.price}</p>
+                    </div>
                   </div>
                 </div>
 
@@ -68,13 +75,20 @@ const CartLayout = ({
           <h2 className={styles.titleTotalPrice}>Total price</h2>
           <div className={styles.subTotal}>
             <div>SubTotal</div>
-            <div>$ {cart?.totalPrice}</div>
+            <div className={styles.price}>
+              <p>$</p>
+              <p>{cart?.totalPrice}</p>
+            </div>
           </div>
           <div className={styles.total}>
             <div>Total</div>
-            <div>$ {cart?.totalPrice}</div>
+            <div className={styles.price}>
+              <p>$</p>
+              <p>{cart?.totalPrice}</p>
+            </div>
           </div>
           <button
+            type="submit"
             disabled={!cart.quantity}
             onClick={onCreateOrder}
             className={styles.buttonOrder}
@@ -94,5 +108,15 @@ const CartLayout = ({
     )}
   </div>
 );
+
+CartLayout.propTypes = {
+  cart: PropTypes.shape.isRequired,
+  isLoading: PropTypes.bool.isRequired,
+  onDeleteItem: PropTypes.func.isRequired,
+  onIncrementItem: PropTypes.func.isRequired,
+  onDecrementItem: PropTypes.func.isRequired,
+  onCreateOrder: PropTypes.func.isRequired,
+  order: PropTypes.shape.isRequired,
+};
 
 export default CartLayout;

@@ -1,10 +1,12 @@
 import { memo, useEffect } from "react";
-import Badge from "@mui/material/Badge";
-import { styled } from "@mui/material/styles";
-import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { useSelector } from "react-redux";
 
+import { styled } from "@mui/material/styles";
+import Badge from "@mui/material/Badge";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+
 import { useCart } from "../../hooks/useCart";
+
 import { isAuthSelector } from "../../selectors";
 
 const StyledBadge = styled(Badge)(() => ({
