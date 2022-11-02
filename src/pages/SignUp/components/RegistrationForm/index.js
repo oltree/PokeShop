@@ -1,39 +1,47 @@
 import { NavLink } from "react-router-dom";
+import { PropTypes } from "prop-types";
 
 import FormInput from "../../../../commonComponents/FormInput";
 import FormSelect from "../../../../commonComponents/FormSelect";
 import FormTooltip from "../../../../commonComponents/FormTooltip";
 import FormInputPassword from "../../../../commonComponents/FormInputPassword";
 
-import { hintTexts } from "../../constants";
+import { HINT_TEXT } from "../../constants";
 import { ROUTE_NAMES } from "../../../../routes/routeNames";
 
 import styles from "./index.module.scss";
 
-const RegistrationForm = ({ formik }) => (
+const RegistrationForm = ({
+  values,
+  errors,
+  onChange,
+  onBlur,
+  touched,
+  onSubmit,
+}) => (
   <div className={styles.wrapper}>
     <h1 className={styles.title}>CREATE AN ACCOUNT</h1>
 
-    <form onSubmit={formik.handleSubmit} className={styles.form}>
+    <form onSubmit={onSubmit} className={styles.form}>
       <FormInput
         name="email"
         type="email"
-        errors={formik.errors.email}
-        value={formik.values.email}
-        onFormikChange={formik.handleChange}
-        onBlur={formik.handleBlur}
-        touched={formik.touched.email}
+        errors={errors.email}
+        value={values.email}
+        onFormikChange={onChange}
+        onBlur={onBlur}
+        touched={touched.email}
       />
 
-      <FormTooltip title={hintTexts.password}>
+      <FormTooltip title={HINT_TEXT.password}>
         <div className={styles.tooltip}>
           <FormInputPassword
             name="password"
-            errors={formik.errors.password}
-            value={formik.values.password}
-            onFormikChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            touched={formik.touched.password}
+            errors={errors.password}
+            value={values.password}
+            onFormikChange={onChange}
+            onBlur={onBlur}
+            touched={touched.password}
           />
         </div>
       </FormTooltip>
@@ -41,42 +49,42 @@ const RegistrationForm = ({ formik }) => (
       <FormInput
         name="firstName"
         type="firstName"
-        errors={formik.errors.firstName}
-        value={formik.values.firstName}
-        onFormikChange={formik.handleChange}
-        onBlur={formik.handleBlur}
-        touched={formik.touched.firstName}
+        errors={errors.firstName}
+        value={values.firstName}
+        onFormikChange={onChange}
+        onBlur={onBlur}
+        touched={touched.firstName}
       />
 
       <FormInput
         name="lastName"
         type="lastName"
-        errors={formik.errors.lastName}
-        value={formik.values.lastName}
-        onFormikChange={formik.handleChange}
-        onBlur={formik.handleBlur}
-        touched={formik.touched.lastName}
+        errors={errors.lastName}
+        value={values.lastName}
+        onFormikChange={onChange}
+        onBlur={onBlur}
+        touched={touched.lastName}
       />
 
       <FormSelect
         name="gender"
-        errors={formik.errors.gender}
-        value={formik.values.gender}
-        onFormikChange={formik.handleChange}
-        onBlur={formik.handleBlur}
-        touched={formik.touched.gender}
+        errors={errors.gender}
+        value={values.gender}
+        onFormikChange={onChange}
+        onBlur={onBlur}
+        touched={touched.gender}
       />
 
-      <FormTooltip title={hintTexts.phone}>
+      <FormTooltip title={HINT_TEXT.phone}>
         <div className={styles.tooltip}>
           <FormInput
             name="phone"
             type="phone"
-            errors={formik.errors.phone}
-            value={formik.values.phone}
-            onFormikChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            touched={formik.touched.phone}
+            errors={errors.phone}
+            value={values.phone}
+            onFormikChange={onChange}
+            onBlur={onBlur}
+            touched={touched.phone}
           />
         </div>
       </FormTooltip>
@@ -96,5 +104,14 @@ const RegistrationForm = ({ formik }) => (
     </form>
   </div>
 );
+
+RegistrationForm.propTypes = {
+  values: PropTypes.objectOf(PropTypes.string).isRequired,
+  errors: PropTypes.objectOf(PropTypes.string).isRequired,
+  onChange: PropTypes.func.isRequired,
+  onBlur: PropTypes.func.isRequired,
+  touched: PropTypes.objectOf(PropTypes.bool).isRequired,
+  onSubmit: PropTypes.func.isRequired,
+};
 
 export default RegistrationForm;

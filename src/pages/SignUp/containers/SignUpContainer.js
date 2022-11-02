@@ -57,7 +57,12 @@ const SignUpContainer = () => {
 
   return (
     <SignUpLayout
-      formik={formik}
+      values={formik.values}
+      errors={formik.errors}
+      onChange={formik.handleChange}
+      onBlur={formik.handleBlur}
+      touched={formik.touched}
+      onSubmit={formik.handleSubmit}
       data={data}
       error={error}
       isLoading={isLoading}

@@ -25,18 +25,16 @@
     "import/prefer-default-export": "off",
     "indent": ["warn", 2],
     "no-console": "warn",
-    "comma-dangle": [
-      "error",
-      { "functions": "ignore", "objects": "ignore", "imports": "ignore" }
-    ],
+    "comma-dangle": ["error", { "functions": "ignore", "objects": "ignore" }],
     "semi": ["warn", "always"],
     "object-curly-newline": "off",
     "operator-linebreak": "off",
     "implicit-arrow-linebreak": "off",
     "class-methods-use-this": "off",
-    //"consistent-return": "off",
-    //"react/prop-types": 0,
+    "consistent-return": "off",
+    //"react/prop-types": "off", ////////////////////////////////////
     "no-param-reassign": ["error", { "props": false }],
+    //"react/forbid-prop-types": "off", ///////////////////////
     //"react/jsx-curly-newline": "off",
     //"react/jsx-one-expression-per-line": "off"
     //"jsx-a11y/no-static-element-interactions": "off",
@@ -50,6 +48,7 @@
         "exceptions": ["Tooltip", "div", "StyledMenu"]
       }
     ],
-    "react/jsx-wrap-multilines": "off"
+    "react/jsx-wrap-multilines": "off",
+    "spaced-comment": "off"
   }
 }

@@ -30,11 +30,16 @@ const FormInput = ({
 FormInput.propTypes = {
   name: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,
-  errors: PropTypes.func.isRequired,
+  errors: PropTypes.string,
   value: PropTypes.string.isRequired,
   onFormikChange: PropTypes.func.isRequired,
   onBlur: PropTypes.func.isRequired,
-  touched: PropTypes.bool.isRequired,
+  touched: PropTypes.bool,
+};
+
+FormInput.defaultProps = {
+  errors: undefined,
+  touched: undefined,
 };
 
 export default memo(FormInput);
