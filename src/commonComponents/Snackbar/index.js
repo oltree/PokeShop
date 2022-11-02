@@ -23,7 +23,7 @@ const SnackbarWithAlert = ({ timeAlert, textAlert, severity }) => {
 };
 
 SnackbarWithAlert.propTypes = {
-  timeAlert: PropTypes.string.isRequired,
+  timeAlert: PropTypes.number.isRequired,
   textAlert: PropTypes.string.isRequired,
   severity: PropTypes.string.isRequired,
 };

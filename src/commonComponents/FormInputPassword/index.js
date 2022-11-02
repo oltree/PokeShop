@@ -57,11 +57,16 @@ const FormInputPassword = ({
 
 FormInputPassword.propTypes = {
   name: PropTypes.string.isRequired,
-  errors: PropTypes.func.isRequired,
+  errors: PropTypes.string,
   value: PropTypes.string.isRequired,
   onFormikChange: PropTypes.func.isRequired,
   onBlur: PropTypes.func.isRequired,
-  touched: PropTypes.bool.isRequired,
+  touched: PropTypes.bool,
+};
+
+FormInputPassword.defaultProps = {
+  errors: undefined,
+  touched: undefined,
 };
 
 export default memo(FormInputPassword);

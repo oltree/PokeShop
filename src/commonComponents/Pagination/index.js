@@ -28,7 +28,7 @@ const Pagination = ({ currentPage, onPageChange, isDisabled }) => (
 Pagination.propTypes = {
   currentPage: PropTypes.number.isRequired,
   onPageChange: PropTypes.func.isRequired,
-  isDisabled: PropTypes.func.isRequired,
+  isDisabled: PropTypes.bool.isRequired,
 };
 
 export default memo(Pagination);
