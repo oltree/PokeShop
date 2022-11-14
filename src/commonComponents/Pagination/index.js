@@ -1,8 +1,8 @@
 import { memo } from "react";
 import { PropTypes } from "prop-types";
 
-import { createTheme, ThemeProvider } from "@mui/material/styles";
 import MaterialPagination from "@mui/material/Pagination";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 const theme = createTheme({
   palette: {
@@ -16,10 +16,10 @@ const Pagination = ({ currentPage, onPageChange, isDisabled }) => (
   <ThemeProvider theme={theme}>
     <MaterialPagination
       count={20}
+      color="yellow"
       boundaryCount={2}
       page={currentPage}
       onChange={onPageChange}
-      color="yellow"
       disabled={isDisabled}
     />
   </ThemeProvider>

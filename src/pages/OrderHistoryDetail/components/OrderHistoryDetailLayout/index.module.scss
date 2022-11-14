@@ -26,6 +26,8 @@
 			.orderInfo {
 				width: 150px;
 				.info {
+					display: flex;
+					gap: 5px;
 					margin-bottom: 10px;
 					font-weight: 500;
 				}

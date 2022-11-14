@@ -1,8 +1,8 @@
 import { memo } from "react";
 import { PropTypes } from "prop-types";
 
-import { createTheme, ThemeProvider } from "@mui/material/styles";
 import CircularProgress from "@mui/material/CircularProgress";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 import styles from "./index.module.scss";
 

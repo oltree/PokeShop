@@ -1,18 +1,18 @@
 import { memo } from "react";
 import { PropTypes } from "prop-types";
 
-import InputLabel from "@mui/material/InputLabel";
-import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";
+import InputLabel from "@mui/material/InputLabel";
+import FormControl from "@mui/material/FormControl";
 
 const FormSelect = ({
   name,
-  errors,
   value,
-  onFormikChange,
-  onBlur,
+  errors,
   touched,
+  onBlur,
+  onFormikChange,
 }) => (
   <FormControl variant="standard">
     <InputLabel

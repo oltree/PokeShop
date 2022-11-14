@@ -4,16 +4,16 @@ import { PropTypes } from "prop-types";
 import styles from "./index.module.scss";
 
 const ChangeQuantityButton = ({
-  onDecrementItem,
-  onIncrementItem,
-  quantity,
   id,
+  quantity,
+  onIncrementItem,
+  onDecrementItem,
 }) => (
   <div className={styles.wrapper}>
     <button
       type="submit"
-      onClick={() => onDecrementItem({ id, quantity })}
       className={styles.button}
+      onClick={() => onDecrementItem({ id, quantity })}
     >
       -
     </button>
@@ -22,8 +22,8 @@ const ChangeQuantityButton = ({
 
     <button
       type="submit"
-      onClick={() => onIncrementItem({ id, quantity })}
       className={styles.button}
+      onClick={() => onIncrementItem({ id, quantity })}
     >
       +
     </button>
@@ -31,10 +31,10 @@ const ChangeQuantityButton = ({
 );
 
 ChangeQuantityButton.propTypes = {
-  onDecrementItem: PropTypes.func.isRequired,
+  id: PropTypes.number.isRequired,
   quantity: PropTypes.number.isRequired,
   onIncrementItem: PropTypes.func.isRequired,
-  id: PropTypes.string.isRequired,
+  onDecrementItem: PropTypes.func.isRequired,
 };
 
 export default memo(ChangeQuantityButton);

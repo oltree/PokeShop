@@ -2,8 +2,8 @@ import { memo } from "react";
 import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 
-import { styled } from "@mui/material/styles";
 import Menu from "@mui/material/Menu";
+import { styled } from "@mui/material/styles";
 import MenuItem from "@mui/material/MenuItem";
 import AccountCircle from "@mui/icons-material/AccountCircle";
 import PopupState, { bindTrigger, bindMenu } from "material-ui-popup-state";
@@ -15,9 +15,11 @@ import styles from "./index.module.scss";
 const StyledMenu = styled(Menu)(() => ({
   "& .MuiList-root": {
     width: 150,
-    display: "flex",
-    flexDirection: "column",
-    background: "#fff",
+  },
+  "& .MuiButtonBase-root": {
+    fontSize: "18px",
+    fontFamily: "Arial",
+    padding: " 5px 20px",
   },
 }));
 
@@ -28,6 +30,7 @@ const IconProfile = () => {
 
   const handleLogoutInProfile = () => {
     localStorage.clear();
+
     window.location.reload();
   };
 
@@ -41,15 +44,15 @@ const IconProfile = () => {
           </div>
           <StyledMenu {...bindMenu(popupState)}>
             <MenuItem onClick={popupState.close}>
-              <NavLink className={styles.navlink} to={ROUTE_NAMES.PROFILE}>
+              <NavLink to={ROUTE_NAMES.PROFILE} className={styles.navlink}>
                 Profile
               </NavLink>
             </MenuItem>
             <MenuItem onClick={popupState.close}>
               <NavLink
+                to={ROUTE_NAMES.HOME}
                 className={styles.navlink}
                 onClick={handleLogoutInProfile}
-                to={ROUTE_NAMES.HOME}
               >
                 Logout
               </NavLink>

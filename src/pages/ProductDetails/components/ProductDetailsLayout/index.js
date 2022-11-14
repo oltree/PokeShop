@@ -1,7 +1,8 @@
+import { PropTypes } from "prop-types";
 import lowerCase from "lodash/lowerCase";
 import startCase from "lodash/startCase";
-import DeleteIcon from "@mui/icons-material/Delete";
 
+import DeleteIcon from "@mui/icons-material/Delete";
 import Spinner from "../../../../commonComponents/Spinner";
 import ChangeQuantityButton from "../ChangeQuantityButton";
 
@@ -32,6 +33,16 @@ const ProductDetailsLayout = ({ product, isLoading, error }) => {
     icon: favicon[index],
   }));
 
+  const price = `Price: $ ${product.price}`;
+
+  const item = {
+    id: product.id,
+    name: product.name,
+    image: product.image,
+    price: product.price,
+    quantity: 1,
+  };
+
   return (
     <>
       {isLoading ? (
@@ -54,10 +65,10 @@ const ProductDetailsLayout = ({ product, isLoading, error }) => {
 
               {productStatsWithIcons?.map((stat) => (
                 <div key={stat.title} className={styles.stats}>
-                  <p className={styles.stat}>
-                    <img height={20} src={stat.icon} alt="icon" /> {stat.title}
-                  </p>
-                  <p className={styles.stat}>- {stat.value}</p>
+                  <img height={20} src={stat.icon} alt="icon" />
+                  <p className={styles.stat}>{stat.title}</p>
+                  <p>-</p>
+                  <p className={styles.stat}>{stat.value}</p>
                 </div>
               ))}
             </div>
@@ -66,12 +77,16 @@ const ProductDetailsLayout = ({ product, isLoading, error }) => {
               <div className={styles.title}>Abilities:</div>
               {product.abilities?.map((ability) => (
                 <div key={ability.title} className={styles.ability}>
-                  {startCase(ability.title)} - {lowerCase(ability.description)}.
+                  <p style={{ width: "15%" }}>{startCase(ability.title)}</p>
+                  <p>-</p>
+                  <p style={{ width: "85%" }}>
+                    {lowerCase(ability.description)}
+                  </p>
                 </div>
               ))}
             </div>
 
-            <div className={styles.price}>Price: $ {product.price}</div>
+            <div className={styles.price}>{price}</div>
 
             {cart.itemsList[product.id]?.quantity ? (
               <div className={styles.changeQuantityButton}>
@@ -89,15 +104,8 @@ const ProductDetailsLayout = ({ product, isLoading, error }) => {
               </div>
             ) : (
               <button
-                onClick={() =>
-                  handleAddItem({
-                    id: product.id,
-                    name: product.name,
-                    image: product.image,
-                    price: product.price,
-                    quantity: 1,
-                  })
-                }
+                type="submit"
+                onClick={() => handleAddItem(item)}
                 className={styles.button}
               >
                 Add to cart
@@ -110,6 +118,34 @@ const ProductDetailsLayout = ({ product, isLoading, error }) => {
       {error && <div style={{ color: "red" }}>{error}</div>}
     </>
   );
+};
+
+ProductDetailsLayout.propTypes = {
+  product: PropTypes.shape({
+    abilities: PropTypes.arrayOf(
+      PropTypes.shape({
+        title: PropTypes.string,
+        description: PropTypes.string,
+      })
+    ),
+    id: PropTypes.number,
+    image: PropTypes.string,
+    name: PropTypes.string,
+    price: PropTypes.number,
+    stats: PropTypes.arrayOf(
+      PropTypes.shape({
+        title: PropTypes.string,
+        value: PropTypes.number,
+      })
+    ),
+  }).isRequired,
+
+  isLoading: PropTypes.bool.isRequired,
+  error: PropTypes.func,
+};
+
+ProductDetailsLayout.defaultProps = {
+  error: null,
 };
 
 export default ProductDetailsLayout;

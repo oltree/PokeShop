@@ -13,12 +13,12 @@ import styles from "./index.module.scss";
 
 const CartLayout = ({
   cart,
+  success,
   isLoading,
   onDeleteItem,
   onIncrementItem,
   onDecrementItem,
   onCreateOrder,
-  order,
 }) => (
   <div className={styles.wrapper}>
     {isLoading ? (
@@ -39,7 +39,7 @@ const CartLayout = ({
               </NavLink>
             </div>
           ) : (
-            Object.entries(cart?.itemsList).map(([id, item]) => (
+            Object.entries(cart.itemsList).map(([id, item]) => (
               <div key={item.id} className={styles.cardContainer}>
                 <div className={styles.card}>
                   <img height={100} src={item.image} alt="pokemon" />
@@ -99,7 +99,7 @@ const CartLayout = ({
       </div>
     )}
 
-    {order.isLoading && (
+    {success && (
       <SnackbarWithAlert
         timeAlert={3000}
         textAlert="Your order is accepted!"
@@ -110,13 +110,20 @@ const CartLayout = ({
 );
 
 CartLayout.propTypes = {
-  cart: PropTypes.shape.isRequired,
+  cart: PropTypes.shape({
+    customerId: PropTypes.string,
+    error: PropTypes.func,
+    isLoading: PropTypes.bool,
+    itemsList: PropTypes.shape(),
+    quantity: PropTypes.number,
+    totalPrice: PropTypes.number,
+  }).isRequired,
   isLoading: PropTypes.bool.isRequired,
   onDeleteItem: PropTypes.func.isRequired,
   onIncrementItem: PropTypes.func.isRequired,
   onDecrementItem: PropTypes.func.isRequired,
   onCreateOrder: PropTypes.func.isRequired,
-  order: PropTypes.shape.isRequired,
+  success: PropTypes.bool.isRequired,
 };
 
 export default CartLayout;

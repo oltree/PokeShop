@@ -1,4 +1,5 @@
 import startCase from "lodash/startCase";
+import { PropTypes } from "prop-types";
 
 import Spinner from "../../../../commonComponents/Spinner";
 
@@ -22,16 +23,23 @@ const OrderHistoryDetailLayout = ({ orderItems, isLoading }) => (
               <div className={styles.name}>{startCase(item.name)}</div>
 
               <div className={styles.orderInfo}>
-                <div className={styles.info}>Quantity: {item.quantity}</div>
-                <div className={styles.info}>Unit price: {item.price}</div>
                 <div className={styles.info}>
-                  Total price: {item.quantity * item.price}
+                  <p>Quantity:</p>
+                  <p>{item.quantity}</p>
+                </div>
+                <div className={styles.info}>
+                  <p>Unit price: </p>
+                  <p>{item.price}</p>
+                </div>
+                <div className={styles.info}>
+                  <p>Total price: </p>
+                  <p>{item.quantity * item.price}</p>
                 </div>
               </div>
             </div>
           ))}
           <div className={styles.totalPrice}>
-            Total price: ${" "}
+            Total price: $
             {orderItems?.reduce(
               (result, item) => result + item.quantity * item.price,
               0
@@ -42,5 +50,23 @@ const OrderHistoryDetailLayout = ({ orderItems, isLoading }) => (
     )}
   </div>
 );
+
+OrderHistoryDetailLayout.propTypes = {
+  orderItems: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number,
+      image: PropTypes.string,
+      name: PropTypes.string,
+      price: PropTypes.number,
+      quantity: PropTypes.number,
+      _id: PropTypes.string,
+    })
+  ),
+  isLoading: PropTypes.bool.isRequired,
+};
+
+OrderHistoryDetailLayout.defaultProps = {
+  orderItems: null,
+};
 
 export default OrderHistoryDetailLayout;

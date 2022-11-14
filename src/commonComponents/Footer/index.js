@@ -2,8 +2,8 @@ import { memo } from "react";
 import moment from "moment";
 import { Link } from "react-router-dom";
 
-import PokeShopLogotip from "../../static/icons/PokeShopLogotip.png";
 import Instagram from "../../static/icons/instagram.png";
+import PokeShopLogotip from "../../static/icons/PokeShopLogotip.png";
 
 import { ROUTE_NAMES } from "../../routes/routeNames";
 
@@ -22,8 +22,10 @@ const Footer = () => {
               <p>PokeShop</p>
             </Link>
           </div>
+
           <div className={styles.email}>
             <p>Need to get in touch? Just email us at</p>
+
             <a
               href="https://mail.ru/"
               target="_blank"

@@ -4,9 +4,11 @@
 		justify-content: space-between;
 		padding: 15px 0;
 		gap: 100px;
+
 		.logoContainer {
 			.logotip {
 				margin-bottom: 10px;
+
 				.logoLink {
 					padding: 10px 0;
 					display: flex;
@@ -14,6 +16,7 @@
 					img {
 						width: 30px;
 					}
+
 					p {
 						margin-left: 5px;
 						color: #000;
@@ -22,6 +25,7 @@
 					}
 				}
 			}
+
 			.email {
 				max-width: 250px;
 				font-size: 14px;
@@ -39,12 +43,14 @@
 		.infoContainer {
 			display: flex;
 			gap: 200px;
+
 			.info {
 				.title {
 					font-size: 14px;
 					font-weight: 500;
 					line-height: 40px;
 				}
+
 				.linkContainer {
 					display: flex;
 					flex-direction: column;
@@ -61,6 +67,7 @@
 			margin-top: 30px;
 		}
 	}
+
 	.pokemonshop {
 		padding: 5px;
 		font-size: 12px;

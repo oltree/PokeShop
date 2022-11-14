@@ -47,7 +47,12 @@ const SignInContainer = () => {
   return (
     <SignInLayout
       error={error}
-      formik={formik}
+      values={formik.values}
+      touched={formik.touched}
+      errors={formik.errors}
+      onSubmit={formik.handleSubmit}
+      onChange={formik.handleChange}
+      onBlur={formik.handleBlur}
       isAuth={isAuth}
       isLoading={isLoading}
     />
