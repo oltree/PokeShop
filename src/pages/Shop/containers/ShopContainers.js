@@ -38,9 +38,9 @@ const ShopContainers = () => {
     <ShopLayout
       error={error}
       isLoading={isLoading}
-      onNavigateToPokemonDetail={handleNavigateToPokemonDetail}
       page={page}
       onPageChange={handlePageChange}
+      onNavigateToPokemonDetail={handleNavigateToPokemonDetail}
     />
   );
 };

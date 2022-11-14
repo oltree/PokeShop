@@ -1,4 +1,5 @@
 import { useSelector } from "react-redux";
+import { PropTypes } from "prop-types";
 import startCase from "lodash/startCase";
 
 import ShopHeader from "../ShopHeader";
@@ -13,9 +14,9 @@ import styles from "./index.module.scss";
 const ShopLayout = ({
   isLoading,
   error,
-  onNavigateToPokemonDetail,
   page,
   onPageChange,
+  onNavigateToPokemonDetail,
 }) => {
   const products = useSelector(mergedWithCartSelector);
 
@@ -58,6 +59,18 @@ const ShopLayout = ({
       </div>
     </div>
   );
+};
+
+ShopLayout.propTypes = {
+  isLoading: PropTypes.bool.isRequired,
+  error: PropTypes.func,
+  page: PropTypes.number.isRequired,
+  onPageChange: PropTypes.func.isRequired,
+  onNavigateToPokemonDetail: PropTypes.func.isRequired,
+};
+
+ShopLayout.defaultProps = {
+  error: null,
 };
 
 export default ShopLayout;

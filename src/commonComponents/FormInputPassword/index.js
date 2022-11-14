@@ -1,21 +1,21 @@
 import { memo, useState, useCallback } from "react";
 import { PropTypes } from "prop-types";
 
-import IconButton from "@mui/material/IconButton";
 import Input from "@mui/material/Input";
 import InputLabel from "@mui/material/InputLabel";
-import InputAdornment from "@mui/material/InputAdornment";
+import IconButton from "@mui/material/IconButton";
 import FormControl from "@mui/material/FormControl";
 import Visibility from "@mui/icons-material/Visibility";
+import InputAdornment from "@mui/material/InputAdornment";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 
 const FormInputPassword = ({
   name,
-  errors,
   value,
-  onFormikChange,
-  onBlur,
+  errors,
   touched,
+  onBlur,
+  onFormikChange,
 }) => {
   const [valuePassword, setValuePassword] = useState({
     password: "",

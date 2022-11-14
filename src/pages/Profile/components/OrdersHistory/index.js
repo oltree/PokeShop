@@ -1,5 +1,6 @@
 import { memo, useState } from "react";
-import PropTypes from "prop-types";
+import { PropTypes } from "prop-types";
+
 import { useTheme } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import TablePagination from "@mui/material/TablePagination";
@@ -98,21 +99,26 @@ const CustomPaginationActionsTable = ({
     setPage(0);
   };
 
+  const price = (totalPrice) => `$ ${totalPrice}`;
+
   return (
     <table className={styles.wrapper}>
       <tbody>
         {(rowsPerPage > 0
           ? orders.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
           : orders
-        ).map((order) => (
-          <tr key={order._id} className={styles.order}>
-            <td>{customDate(order.createdAt)}</td>
-            <td>$ {order.totalPrice}</td>
-            <td
-              style={{ cursor: "pointer" }}
-              onClick={() => onNavigateOrderHistoryDetail(order._id)}
-            >
-              More...
+        ).map(({ _id: id, createdAt, totalPrice }) => (
+          <tr key={id} className={styles.order}>
+            <td>{customDate(createdAt)}</td>
+            <td>{price(totalPrice)}</td>
+            <td>
+              <button
+                type="submit"
+                style={{ padding: "5px 10px" }}
+                onClick={() => onNavigateOrderHistoryDetail(id)}
+              >
+                More...
+              </button>
             </td>
           </tr>
         ))}
@@ -140,6 +146,15 @@ const CustomPaginationActionsTable = ({
       </tfoot>
     </table>
   );
+};
+
+CustomPaginationActionsTable.propTypes = {
+  orders: PropTypes.arrayOf(PropTypes.shape),
+  onNavigateOrderHistoryDetail: PropTypes.func.isRequired,
+};
+
+CustomPaginationActionsTable.defaultProps = {
+  orders: null,
 };
 
 export default memo(CustomPaginationActionsTable);

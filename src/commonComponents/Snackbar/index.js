@@ -6,6 +6,7 @@ import Alert from "@mui/material/Alert";
 
 const SnackbarWithAlert = ({ timeAlert, textAlert, severity }) => {
   const [open, setOpen] = useState(true);
+
   const handleClose = () => setOpen(false);
 
   return (

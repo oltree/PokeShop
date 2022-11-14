@@ -10,7 +10,9 @@ const HomeLayout = ({ onNavigateToShop }) => (
     <Banner />
     <div className={styles.contentContainer}>
       <h2 className={styles.subtitle}>ALL COLLECTIONS</h2>
+
       <h1 className={styles.title}>Here You Will Find Your Pokemon</h1>
+
       <button
         type="submit"
         onClick={onNavigateToShop}

@@ -3,10 +3,22 @@
 
 	.order {
 		display: flex;
+		align-items: center;
 		justify-content: space-between;
 		padding: 10px 5px;
 		border: 1px solid rgb(211, 211, 211);
 		margin-bottom: 10px;
+
+		button {
+			color: #fff;
+			background: rgb(187, 187, 187);
+			transition: all 0.5s ease-out;
+
+			&:hover {
+				color: rgb(210, 210, 210);
+				background: rgb(13, 13, 13);
+			}
+		}
 	}
 
 	.link {

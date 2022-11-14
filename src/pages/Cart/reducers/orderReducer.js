@@ -3,26 +3,34 @@ import { createSlice } from "@reduxjs/toolkit";
 import { createNewOrder, getOrders } from "../thunks";
 
 const initialState = {
-  data: [],
+  data: null,
   isLoading: false,
   error: null,
+  success: false,
 };
 
 const orderSlice = createSlice({
   name: "order",
   initialState,
-  reducers: {},
+  reducers: {
+    handleUpdateState(state) {
+      return { ...state, success: false };
+    },
+  },
   extraReducers: (builder) => {
     builder.addCase(createNewOrder.pending, (state) => {
       state.isLoading = true;
       state.error = null;
+      state.success = false;
     });
     builder.addCase(createNewOrder.fulfilled, (state) => {
       state.isLoading = false;
+      state.success = true;
     });
     builder.addCase(createNewOrder.rejected, (state, { payload: error }) => {
       state.isLoading = false;
       state.error = error;
+      state.success = false;
     });
 
     builder.addCase(getOrders.pending, (state) => {
@@ -39,5 +47,7 @@ const orderSlice = createSlice({
     });
   },
 });
+
+export const { handleUpdateState } = orderSlice.actions;
 
 export default orderSlice.reducer;
