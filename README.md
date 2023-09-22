@@ -1,6 +1,30 @@
-The project is an online Pokémon store. During my work on the project the following was carried out:
-- Creation of an online store design;
-- Choosing a technology stack (JavaScript, React + Redux Toolkit);
-- Division of the project into stages: creation of a new SPA application based on React; connection of libraries necessary for work (Axios, Formik + Yup, Lodash, Material UI, Prop-Types, React-Router); implementation of the following functionality: registration, authorization, product catalog, shopping cart, user profile with information about the user and his order's history, additional information pages;
-- Deployed the project using the github-pages library;
-- Presentation of the project. 
+# Project Description
+
+This app is an online Pokémon store.
+
+## `Functionality`
+
+- Registration/Authorization.
+- Product catalog, add/delete product.
+- Shopping cart.
+- User profile with information about the user and his order's history.
+- Additional information pages.
+
+## `Technologies`
+
+- React JS.
+- JavaScript.
+- SCSS + Material-ui.
+- Axios.
+- Redux toolkit + Redux-persist.
+- Formik + Yup.
+- React-router-dom.
+- Reselect.
+- Prop-types, lodash.
+- Deploy with github-pages.
+
+## `Installation`
+
+- Clone the repository to your computer.
+- Install dependencies using the command npm install.
+- Start the application using the command npm run dev.
